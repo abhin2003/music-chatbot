@@ -11,7 +11,8 @@ function ChatBox() {
     setMessages([...messages, userMsg]);
 
     try {
-      const res = await axios.post('http://localhost:5000/chat', { message: input });
+      const BASE_URL = "https://music-chatbot.onrender.com"; // updated backend URL
+      const res = await axios.post(`${BASE_URL}/chat`, { message: input });
       const botMsg = { sender: 'bot', text: res.data.response };
       setMessages(prev => [...prev, botMsg]);
     } catch (err) {
@@ -42,3 +43,4 @@ function ChatBox() {
 }
 
 export default ChatBox;
+
