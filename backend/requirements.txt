@@ -6,4 +6,5 @@ rich
 python-dateutil
 pytz
 PyYAML
+flask-cors
 
